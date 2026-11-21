@@ -97,3 +97,10 @@ Things the census shows that I did not find written down:
 ## License
 
 MIT. The files in `ref/` are OEIS data, CC BY-SA 4.0.
+
+<!-- sen-publish:links -->
+## Links
+
+- 🌐 Demo: https://sen.ltd/portfolio/ducci/
+- 📝 記事: https://qiita.com/sen-ltd/items/0fd9d746add6affe8aee
+<!-- /sen-publish:links -->
