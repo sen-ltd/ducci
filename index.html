@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ducci — cyclic differences, the four-number game and every binary word up to n = 32</title>
+    <meta
+      name="description"
+      content="Play the Ducci map (replace every number by its distance to the next one, around a circle) with a solver: the four-number game, nested polygons, rule 102 on a ring, and exhaustive censuses of every 0/1 word up to n = 32 and every quadruple up to 4100, checked against OEIS A135547, A111944, A038553, A065677 and A065678."
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23141518'/%3E%3Crect x='5' y='5' width='22' height='22' fill='none' stroke='%23f1ead9' stroke-width='2'/%3E%3Cpath d='M16 5 27 16 16 27 5 16Z' fill='none' stroke='%237cc4e4' stroke-width='2'/%3E%3Crect x='10.5' y='10.5' width='11' height='11' fill='none' stroke='%23e3a857' stroke-width='2'/%3E%3C/svg%3E"
+    />
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Ducci <span>numbers around a circle, minus their neighbours</span></h1>
+        <p class="sub">
+          Write numbers around a circle. A move replaces every number by its <strong>distance to the next one</strong>:
+          (a₁, …, aₙ) ↦ (|a₁ − a₂|, |a₂ − a₃|, …, |aₙ − a₁|). Nothing grows, so every start ends in a cycle — and the cycle is
+          always <em>c times a pattern of 0s and 1s</em> (Burmester, Forcade &amp; Jacobs 1978). When n is a power of two the
+          cycle is all zeros (Ciamberlini &amp; Marengoni 1937). On 0s and 1s the move is x XOR rotate(x): cellular automaton
+          rule 102 on a ring.
+        </p>
+        <p class="sub">
+          <b>Puzzle — the four-number game:</b> four numbers, none larger than a bound m. Make the game last as long as possible.
+          The solver has tried every quadruple up to m = <span id="m4"></span>.
+        </p>
+      </header>
+
+      <div id="wrap">
+        <div class="stage">
+          <h3>circle <span class="dim" id="tupleLabel"></span></h3>
+          <div class="panel">
+            <div class="controls">
+              <label class="sel">numbers <input id="tIn" type="text" value="0 7 20 44" style="width: 26ch" /></label>
+              <button id="btnSet">Set</button>
+              <button id="btnRand4">Random 4</button>
+              <button id="btnRand5">Random 5</button>
+              <button id="btnRand8">Random 8</button>
+              <button id="btnBits">Random 0/1 × 15</button>
+            </div>
+            <div class="controls">
+              <label class="sel">puzzle bound m <input id="mIn" type="number" min="1" value="100" style="width: 9ch" /></label>
+              <button id="btnBest" class="primary">Solver: longest quadruple ≤ m</button>
+              <button id="btnStep" class="primary">Move ▸</button>
+              <button id="btnPlay">Play ▶</button>
+              <button id="btnStart">⇤ Start</button>
+              <span class="small dim" id="moveInfo"></span>
+            </div>
+            <div class="duo">
+              <canvas id="poly" width="760" height="760"></canvas>
+              <div id="rows" class="mono"></div>
+            </div>
+            <div id="status" aria-live="polite"></div>
+            <div class="score" id="score"></div>
+          </div>
+
+          <h3>0s and 1s <span class="dim">— rule 102 on a ring, time going down</span></h3>
+          <div class="panel">
+            <div class="controls">
+              <label class="sel">n <input id="bIn" type="number" min="3" max="40" value="21" style="width: 7ch" /></label>
+              <button id="btnBRand">Random word</button>
+              <button id="btnBOne">One 1</button>
+              <button id="btnBTwo">Two 1s</button>
+              <span class="small dim" id="bInfo"></span>
+            </div>
+            <canvas id="spacetime" width="1280" height="520"></canvas>
+          </div>
+
+          <h3>longest four-number game <span class="dim">— every quadruple with entries ≤ m</span></h3>
+          <div class="panel">
+            <svg id="chart" class="chart" viewBox="0 0 760 300" role="img" aria-label="longest game by bound"></svg>
+            <p class="small dim" id="chartNote"></p>
+          </div>
+        </div>
+
+        <div class="side">
+          <h3>checks <span class="dim" id="checkHead"></span></h3>
+          <div class="panel" id="checks"></div>
+          <h3>records <span class="dim">— least bound for each length</span></h3>
+          <div class="panel" id="records"></div>
+          <h3>binary census <span class="dim">— all 2ⁿ words</span></h3>
+          <div class="panel" id="binTable"></div>
+        </div>
+      </div>
+
+      <footer>
+        <a href="https://github.com/sen-ltd/ducci">source</a> · MIT · <a href="https://sen.ltd/">SEN LLC</a> ·
+        OEIS data (A065677, A065678, A045794, A135547, A111944, A038553, A138004) under CC BY-SA 4.0
+      </footer>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,199 @@
+{
+ "N": 31,
+ "M4": 4100,
+ "allOk": true,
+ "checks": [
+  {
+   "id": "A135547",
+   "title": "number of cycles of the binary Ducci map",
+   "range": "n ≤ 31",
+   "ok": true,
+   "detail": "31/31 terms equal",
+   "mismatches": []
+  },
+  {
+   "id": "A111944",
+   "title": "number of distinct cycle lengths",
+   "range": "n ≤ 31",
+   "ok": true,
+   "detail": "31/31 terms equal",
+   "mismatches": []
+  },
+  {
+   "id": "A038553",
+   "title": "longest cycle",
+   "range": "n ≤ 31",
+   "ok": true,
+   "detail": "31/31 terms equal",
+   "mismatches": []
+  },
+  {
+   "id": "algebra",
+   "title": "cycles counted by GF(2) algebra (Möbius over fixed-point counts 2^dim ker(Lᵈ + I)) = cycles found by walking",
+   "range": "n ≤ 31 (31 values of n)",
+   "ok": true,
+   "detail": "all equal",
+   "mismatches": []
+  },
+  {
+   "id": "periodic",
+   "title": "periodic words: exactly 2^(n − 2^k) of them (n = 2^k·m, m odd), = the words with even weight on every residue class mod 2^k",
+   "range": "every word, n ≤ 31",
+   "ok": true,
+   "detail": "holds for every word",
+   "mismatches": []
+  },
+  {
+   "id": "A006519",
+   "title": "longest binary preperiod = largest power of 2 dividing n (A006519)",
+   "range": "n ≤ 31",
+   "ok": true,
+   "detail": "equal for every n",
+   "mismatches": []
+  },
+  {
+   "id": "A138004",
+   "title": "odd n with all nontrivial cycles of one length (A138004) ⇔ exactly 2 cycle lengths",
+   "range": "odd n ≤ 31",
+   "ok": true,
+   "detail": "agrees",
+   "mismatches": []
+  },
+  {
+   "id": "pow2-binary",
+   "title": "n = 2^k: every 0/1 word reaches zero (the only cycle is 00…0), within n moves",
+   "range": "n ≤ 31",
+   "ok": true,
+   "detail": "holds",
+   "mismatches": []
+  },
+  {
+   "id": "A065677",
+   "title": "longest four-number game with every entry ≤ m",
+   "range": "m ≤ 72 (b-file), computed to 4100",
+   "ok": true,
+   "detail": "73/73 published terms equal; extended to m = 4100",
+   "mismatches": []
+  },
+  {
+   "id": "A065678",
+   "title": "least bound m that allows a game of length ≥ L",
+   "range": "L ≤ 23",
+   "ok": true,
+   "detail": "24/24 terms equal; next term 4841 > 4100",
+   "mismatches": []
+  },
+  {
+   "id": "A045794",
+   "title": "least largest entry of a quadruple that first becomes constant after L moves (= A065678(L + 1))",
+   "range": "L ≤ 22",
+   "ok": true,
+   "detail": "22/22 terms equal",
+   "mismatches": []
+  },
+  {
+   "id": "A065678-rec",
+   "title": "Barker's recurrence a(L) = 3a(L−3) + a(L−6) + a(L−9) on the A065678 b-file",
+   "range": "L = 11 … 1000",
+   "ok": true,
+   "detail": "990/990 (L = 10 would give 14, the term is 13: the recurrence starts at L = 11)",
+   "mismatches": []
+  },
+  {
+   "id": "replay",
+   "title": "every record quadruple replays to its length",
+   "range": "20 records",
+   "ok": true,
+   "detail": "all replay",
+   "mismatches": []
+  },
+  {
+   "id": "unique",
+   "title": "observation: the longest quadruple is unique up to rotation, reflection, adding a constant and x ↦ m − x",
+   "range": "lengths 7 … 23",
+   "ok": true,
+   "detail": "17 records, each one pair {q, m − q}",
+   "mismatches": []
+  },
+  {
+   "id": "BFJ-3",
+   "title": "n = 3: every cycle is c·(0/1 word) and as long as that word's binary cycle (Burmester–Forcade–Jacobs)",
+   "range": "9,006,001 tuples, entries ≤ 3000",
+   "ok": true,
+   "detail": "cycle lengths seen 1, 3; binary 1, 3",
+   "mismatches": []
+  },
+  {
+   "id": "BFJ-5",
+   "title": "n = 5: every cycle is c·(0/1 word) and as long as that word's binary cycle (Burmester–Forcade–Jacobs)",
+   "range": "9,834,496 tuples, entries ≤ 55",
+   "ok": true,
+   "detail": "cycle lengths seen 1, 15; binary 1, 15",
+   "mismatches": []
+  },
+  {
+   "id": "BFJ-6",
+   "title": "n = 6: every cycle is c·(0/1 word) and as long as that word's binary cycle (Burmester–Forcade–Jacobs)",
+   "range": "9,765,625 tuples, entries ≤ 24",
+   "ok": true,
+   "detail": "cycle lengths seen 1, 3, 6; binary 1, 3, 6",
+   "mismatches": []
+  },
+  {
+   "id": "BFJ-7",
+   "title": "n = 7: every cycle is c·(0/1 word) and as long as that word's binary cycle (Burmester–Forcade–Jacobs)",
+   "range": "11,390,625 tuples, entries ≤ 14",
+   "ok": true,
+   "detail": "cycle lengths seen 1, 7; binary 1, 7",
+   "mismatches": []
+  },
+  {
+   "id": "BFJ-8",
+   "title": "n = 8: every cycle is c·(0/1 word) and as long as that word's binary cycle (Burmester–Forcade–Jacobs)",
+   "range": "10,000,000 tuples, entries ≤ 9",
+   "ok": true,
+   "detail": "cycle lengths seen 1; binary 1",
+   "mismatches": []
+  },
+  {
+   "id": "pow2-8",
+   "title": "n = 8: every integer tuple reaches 00…0 (Ciamberlini–Marengoni 1937)",
+   "range": "entries ≤ 9",
+   "ok": true,
+   "detail": "all reach zero",
+   "mismatches": []
+  },
+  {
+   "id": "BFJ-9",
+   "title": "n = 9: every cycle is c·(0/1 word) and as long as that word's binary cycle (Burmester–Forcade–Jacobs)",
+   "range": "16,777,216 tuples, entries ≤ 7",
+   "ok": true,
+   "detail": "cycle lengths seen 1, 3, 63; binary 1, 3, 63",
+   "mismatches": []
+  },
+  {
+   "id": "pre-3",
+   "title": "observation, n = 3: longest preperiod with entries ≤ m is 1(m − 1) + 1",
+   "range": "1 ≤ m ≤ 3000",
+   "ok": true,
+   "detail": "holds; attained by [0,3000,1]",
+   "mismatches": []
+  },
+  {
+   "id": "pre-5",
+   "title": "observation, n = 5: longest preperiod with entries ≤ m is 3(m − 1) + 1",
+   "range": "1 ≤ m ≤ 55",
+   "ok": true,
+   "detail": "holds; attained by [0,55,54,0,0]",
+   "mismatches": []
+  },
+  {
+   "id": "pre-9",
+   "title": "observation, n = 9: longest preperiod with entries ≤ m is 7(m − 1) + 1",
+   "range": "1 ≤ m ≤ 7",
+   "ok": true,
+   "detail": "holds; attained by [0,7,6,0,0,0,0,0,0]",
+   "mismatches": []
+  }
+ ]
+}

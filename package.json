@@ -1,0 +1,23 @@
+{
+  "name": "ducci",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "The Ducci map (cyclic absolute differences) in the browser: the four-number game with a solver, nested-polygon and rule-102 views, and exhaustive censuses \u2014 every binary word up to n = 32 and every quadruple up to 4100 \u2014 checked against OEIS A135547, A111944, A038553, A065677 and A065678. TypeScript, no runtime deps.",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "binary": "node tools/binary.mts",
+    "integer": "node tools/integer.mts",
+    "verify": "node tools/verify.mts"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.1",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11",
+    "vitest": "^2.1.5"
+  },
+  "license": "MIT"
+}
